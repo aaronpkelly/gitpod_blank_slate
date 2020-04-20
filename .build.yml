@@ -1,21 +1,25 @@
 arch: null
 artifacts: []
 environment:
-  REPO_NAME : github_blank-slate
+  REPO_NAME : gitpod_blank_slate
 image: alpine/edge
 packages: []
 repositories: {}
 secrets:
 - 1b3fe3d9-ee86-4c7e-bd35-d0c87b6e12a9
-- 03f64564-69d2-4a5c-8cb9-e5c7ad610cfc
 shell: false
 sources:
-- git+ssh://git@git.sr.ht/~aaronkelly/$REPO_NAME
+- git+ssh://git@git.sr.ht/~aaronkelly/gitpod_blank_slate
 tasks:
 - push-to-github: |-
-    read -s GITHUB_PASS < ~/GITHUB_PASS
-    cd $REPO_NAME
+    echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    cd gitpod_blank_slate
     git checkout master
-    set +x && git remote set-url origin https://aaronpkelly:$GITHUB_PASS@github.com/aaronpkelly/$REPO_NAME && set -x
+    git remote set-url origin git@github.com:aaronpkelly/gitpod_blank_slate.git
+    git push
+- push-to-gitlab: |-
+    cd gitpod_blank_slate
+    git checkout master
+    git remote set-url origin git@gitlab.com:aaronpkelly/gitpod_blank_slate.git
     git push
 triggers: []
