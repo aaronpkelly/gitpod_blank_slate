@@ -1,5 +1,5 @@
 #! /bin/bash
-set -eux
+set -eu
 
 mkdir ~/.ssh
 cp /workspace/gitpod_blank_slate/id_ed25519_passwordless ~/.ssh/
