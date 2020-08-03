@@ -14,5 +14,5 @@ This sets up a simple development environments within Gitpod
 Use your API to generate a list of clonable URLs:
 
 ```
-api /functions/clone_git_sr_ht_repos
+api /functions/clone_all_git_sr_ht_repos
 ```
