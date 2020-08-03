@@ -1,13 +1,13 @@
 # Get started
 
+This script sets up a simple development environment within Gitpod.
+
 Download your passwordless SSH keys to the following location:
 
-- ~/.ssh/id_ed25519_passwordless
-- ~/.ssh/id_ed25519_passwordless.pub
+- /workspace/gitpod_blank_slate/id_ed25519_passwordless
+-/workspace/gitpod_blank_slate/id_ed25519_passwordless.pub
 
 Then run `./setup_gitpod.sh`
-
-This sets up a simple development environments within Gitpod
 
 # Getting git repos
 
